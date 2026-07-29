@@ -1,0 +1,17 @@
+import DynamicsInducedFlowsSemiflowsLemmaCanonicalLaneLean.DynamicsAnalyticCertificate
+import DynamicsInducedFlowsSemiflowsLemmaCanonicalLaneLean.FinalTheorem
+
+namespace HautevilleHouse
+namespace DynamicsInducedFlowsSemiflowsLemmaCanonicalLaneLean
+
+def DynamicsAdmittedAnalyticClosure : Prop :=
+  DynamicsAnalyticCertificateClosed sourceDynamicsAnalyticCertificate ∧
+  ConstrainedTheoremClosure dynamicsAdmissibleClass
+
+theorem dynamics_admitted_analytic_closure_checked :
+    DynamicsAdmittedAnalyticClosure := by
+  exact And.intro source_dynamics_analytic_certificate_closed
+    (constrained_theorem_closure dynamicsAdmissibleClass)
+
+end DynamicsInducedFlowsSemiflowsLemmaCanonicalLaneLean
+end HautevilleHouse
